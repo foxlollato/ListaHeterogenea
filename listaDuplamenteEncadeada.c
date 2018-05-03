@@ -23,7 +23,7 @@ typedef struct tipoNo noLista;
 Lista* criaLista(){//igual LSE
     Lista* list = (Lista*) malloc(sizeof(Lista));
     if(list != NULL)//criou corretamente
-        *list = NULL; //ponteiro list está vazio - aponta para NULL
+        *list = NULL; //ponteiro list estÃ¡ vazio - aponta para NULL
     return list;
 }
 
@@ -39,14 +39,14 @@ int tamLista(Lista* inicio){ //igual LSE
     return cont;
 }
 
-int listaCheia(Lista* inicio){ //só acontecerá se não houver espaço na memória
-    return 0; //nunca estará cheia, retornará sempre ZERO
+int listaCheia(Lista* inicio){ //sÃ³ acontecerÃ¡ se nÃ£o houver espaÃ§o na memÃ³ria
+    return 0; //nunca estarÃ¡ cheia, retornarÃ¡ sempre ZERO
 }
 
 int listaVazia(Lista* inicio){//igual LE
-    if(inicio == NULL)//verifica se a cabeça existe (lista válida)
+    if(inicio == NULL)//verifica se a cabeÃ§a existe (lista vÃ¡lida)
         return 1;
-    if(*inicio == NULL)//verifica se o conteúdo dela (p/ quem aponta) é NULL
+    if(*inicio == NULL)//verifica se o conteÃºdo dela (p/ quem aponta) Ã© NULL
         return 1;
     return 0;
 }
@@ -78,7 +78,7 @@ int insereFinal(Lista* inicio, int tipo){
         no->tipo=tipo;
         no->prox=NULL;
 
-    if((*inicio) == NULL){ //lista vazia: insere início
+    if((*inicio) == NULL){ //lista vazia: insere inÃ­cio
     	no->ant = NULL; //ATUALIZA ant DO novoNO
         *inicio = no;
     }else{
@@ -106,8 +106,8 @@ int removeInicio(Lista* inicio){
 
 	if (no->prox != NULL)//TINHA MAIS DE 1 ELEMENTO NA LISTA
     	no->prox->ant = NULL; //valor do ponteiro "ant" que
-							 //é apontado pelo campo "prox"
-    						//de quem o "nó" aponta
+							 //Ã© apontado pelo campo "prox"
+    						//de quem o "nÃ³" aponta
     free(no);
     return 1;
 }
@@ -123,7 +123,7 @@ int removeFinal(Lista* inicio){
         no = no->prox;
     }
 
-    if(no->ant == NULL)//remover o primeiro (e único)?
+    if(no->ant == NULL)//remover o primeiro (e Ãºnico)?
         *inicio = no->prox;
     else
         no->ant->prox = no->prox;
@@ -158,12 +158,12 @@ void imprimeLista(Lista* inicio){//IGUAL LSE
 void apagaLista(Lista* inicio){//IGUAL LSE
     if(inicio != NULL){
         noLista* no;
-        while((*inicio) != NULL){ 		 //retira cada nó até encontrar fim da lista (NULL)
-            no = *inicio; 				//no aux recebe o início da lista ("1º..." elemento)
-            *inicio = (*inicio)->prox; //início da lista passa a apontar p/ "2º..." elemento
-            free(no); 				  //libero memória do "1º..." elemento da lista
+        while((*inicio) != NULL){ 		 //retira cada nÃ³ atÃ© encontrar fim da lista (NULL)
+            no = *inicio; 				//no aux recebe o inÃ­cio da lista ("1Âº..." elemento)
+            *inicio = (*inicio)->prox; //inÃ­cio da lista passa a apontar p/ "2Âº..." elemento
+            free(no); 				  //libero memÃ³ria do "1Âº..." elemento da lista
         }
-        free(inicio); //libero cabeça da lista
+        free(inicio); //libero cabeÃ§a da lista
     }
 }
 float calculaAreaFigura(void *figura, int tipo){
@@ -211,10 +211,10 @@ struct retangulo* criaRetangulo(){
 struct triangulo* criaTriangulo(){
     struct triangulo *figura=(struct triangulo*)malloc(sizeof(struct triangulo));
 
-        printf("\Digite a medida da base a: ");
+        printf("\nDigite a medida da base a: ");
         scanf("%f", &figura->b);
 
-        printf("\Digite a medida da altura: ");
+        printf("\nDigite a medida da altura: ");
         scanf("%f", &figura->h);
 
         return figura;
